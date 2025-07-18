@@ -1,0 +1,40 @@
+/* app/components/Tag.module.css */
+
+.tag {
+    display: inline-block;
+    background-color: #e8f0fe;
+    /* Warna latar belakang tag */
+    color: #1a73e8;
+    /* Warna teks tag */
+    padding: 0.3rem 0.7rem;
+    border-radius: 12px;
+    /* Sudut membulat */
+    font-size: 0.85rem;
+    margin-right: 0.5rem;
+    /* Jarak antar tag */
+    margin-bottom: 0.5rem;
+    /* Jarak antar baris tag */
+    cursor: pointer;
+    /* Menunjukkan bahwa tag bisa diklik */
+    transition: background-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+    /* Mencegah tag pecah baris */
+}
+
+.tag:hover {
+    background-color: #d2e3fc;
+    /* Warna latar belakang saat hover */
+}
+
+/* Gaya untuk tag yang sedang aktif (misalnya saat difilter) */
+.tag.active {
+    background-color: #1a73e8;
+    /* Warna latar belakang biru saat aktif */
+    color: #ffffff;
+    /* Warna teks putih saat aktif */
+}
+
+.tag.active:hover {
+    background-color: #0d47a1;
+    /* Warna latar belakang biru lebih gelap saat aktif dan hover */
+}

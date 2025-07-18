@@ -1,0 +1,134 @@
+/* app/components/ContentCard.module.css */
+
+.card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    /* Sudut lebih membulat */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    /* Bayangan lebih jelas */
+    width: 100%;
+    max-width: 600px;
+    /* Lebar maksimum kartu */
+    margin-bottom: 24px;
+    /* Jarak antar kartu */
+    padding: 24px;
+    /* Padding internal */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    /* Transisi saat hover */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    /* Sedikit naik saat hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+    /* Bayangan lebih kuat saat hover */
+}
+
+.titleLink {
+    text-decoration: none;
+    /* Hapus garis bawah pada link judul */
+    color: inherit;
+    /* Warna teks mengikuti parent */
+}
+
+.title {
+    margin: 0 0 12px 0;
+    font-size: 1.75rem;
+    /* Ukuran judul lebih besar */
+    color: #1a0dab;
+    /* Warna biru link Google */
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.title:hover {
+    text-decoration: underline;
+    /* Garis bawah saat hover */
+    color: #0d47a1;
+    /* Warna biru lebih gelap saat hover */
+}
+
+.summary {
+    margin: 0 0 16px 0;
+    color: #5f6368;
+    /* Warna teks ringkasan */
+    font-size: 1rem;
+    line-height: 1.5;
+    /* Jarak antar baris */
+}
+
+.tagsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    /* Tag akan wrap ke baris baru jika terlalu panjang */
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    /* Tombol like di kanan bawah */
+    margin-top: auto;
+    /* Mendorong tombol ke bawah jika ada ruang kosong */
+}
+
+.likeButton {
+    background-color: #f8f9fa;
+    color: #5f6368;
+    border: 1px solid #dadce0;
+    border-radius: 20px;
+    /* Tombol membulat */
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* Jarak antara ikon dan teks */
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.likeButton:hover {
+    background-color: #e8eaed;
+    border-color: #c6c9cc;
+}
+
+.likeButton.liked {
+    background-color: #ffebee;
+    /* Warna latar belakang saat disukai */
+    color: #ea4335;
+    /* Warna teks merah saat disukai */
+    border-color: #fcc2c2;
+}
+
+.likeButton.liked:hover {
+    background-color: #fce8e6;
+    /* Warna latar belakang lebih gelap saat disukai dan hover */
+    border-color: #f8b0b0;
+}
+
+/* Responsivitas untuk layar lebih kecil */
+@media (max-width: 768px) {
+    .card {
+        padding: 18px;
+        margin-bottom: 16px;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .summary {
+        font-size: 0.95rem;
+    }
+
+    .likeButton {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+}
