@@ -1,0 +1,125 @@
+/* app/components/Header.module.css */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    /* Menempatkan logo di kiri, nav di kanan */
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #ffffff;
+    /* Background putih */
+    border-bottom: 1px solid #e0e0e0;
+    /* Garis bawah tipis */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    /* Sedikit bayangan */
+    font-family: 'Inter', sans-serif;
+    /* Menggunakan font Inter */
+}
+
+.logoText {
+    font-size: 1.8rem;
+    /* Ukuran font logo */
+    font-weight: 700;
+    /* Tebal */
+    color: #4285f4;
+    /* Warna biru Google */
+    text-decoration: none;
+    /* Hapus garis bawah */
+}
+
+.nav {
+    display: block;
+    /* Default untuk desktop */
+}
+
+.navList {
+    display: flex;
+    list-style: none;
+    /* Hapus bullet point */
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem;
+    /* Jarak antar item navigasi */
+}
+
+.navItem a {
+    color: #5f6368;
+    /* Warna teks navigasi */
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    /* Transisi halus saat hover */
+}
+
+.navItem a:hover {
+    color: #1a73e8;
+    /* Warna biru saat hover */
+}
+
+.menuButton {
+    display: none;
+    /* Sembunyikan tombol menu di desktop */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #5f6368;
+}
+
+.mobileMenu {
+    display: none;
+    /* Sembunyikan menu mobile secara default */
+}
+
+/* Media Queries untuk Responsivitas */
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+        /* Sembunyikan navigasi di mobile */
+    }
+
+    .menuButton {
+        display: block;
+        /* Tampilkan tombol menu di mobile */
+    }
+
+    .mobileMenu {
+        position: absolute;
+        top: 60px;
+        /* Sesuaikan dengan tinggi header */
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+        display: flex;
+        /* Tampilkan menu mobile saat aktif */
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+    }
+
+    .mobileNavList {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .mobileNavItem {
+        padding: 0.8rem 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .mobileNavItem:last-child {
+        border-bottom: none;
+    }
+
+    .mobileNavItem a {
+        display: block;
+        color: #202124;
+        font-size: 1.1rem;
+        padding: 0.5rem;
+    }
+}
