@@ -1,48 +1,220 @@
 // app/data/contents.js
 
-// Ini adalah array lokal yang berisi data konten mock.
-// Setiap objek merepresentasikan satu konten (artikel/produk).
+// This is a local array containing mock recipe data for the "Recipe Application" theme.
 const contents = [
   {
-    id: '1', // ID unik untuk routing dinamis
-    title: 'Mengenal Next.js App Router',
-    summary: 'Ringkasan singkat tentang fitur dan keunggulan App Router di Next.js.',
-    description: 'Next.js App Router adalah pendekatan baru untuk membangun aplikasi React dengan Next.js, menawarkan performa lebih baik dan pengalaman developer yang ditingkatkan. Ini memungkinkan penggunaan Server Components secara default, nested layouts, dan streaming.',
-    tags: ['Next.js', 'React', 'Frontend'],
-    liked: false, // Untuk fitur "like"
+    id: '1',
+    title: 'Nasi Goreng Spesial',
+    summary: 'Resep nasi goreng klasik dengan bumbu rempah pilihan, cocok untuk sarapan atau makan malam.',
+    description: 'Nasi goreng adalah hidangan populer di Indonesia. Untuk membuatnya, siapkan nasi putih, telur, ayam suwir, bakso, dan bumbu seperti bawang merah, bawang putih, cabai, dan kecap manis. Tumis bumbu hingga harum, masukkan bahan lain, lalu aduk rata dengan nasi. Sajikan selagi hangat dengan kerupuk dan acar.',
+    tags: ['Nasi', 'Indonesia', 'Sarapan', 'Makan Malam'],
+    liked: false,
+    waktuPersiapan: '15 menit',
+    waktuMasak: '20 menit',
+    porsi: '2 porsi',
+    imageUrl: 'https://asset.kompas.com/crops/VcgvggZKE2VHqIAUp1pyHFXXYCs=/202x66:1000x599/1200x800/data/photo/2023/05/07/6456a450d2edd.jpg',
+    bahan: [
+      '2 piring nasi putih dingin',
+      '2 butir telur',
+      '100 gr ayam suwir/udang',
+      '2 buah bakso, iris',
+      '2 siung bawang putih, cincang',
+      '3 siung bawang merah, iris tipis',
+      '2 buah cabai merah, iris (sesuai selera)',
+      '1 sdm kecap manis',
+      '1/2 sdm saus tiram (opsional)',
+      'Garam dan merica secukupnya',
+      'Minyak goreng secukupnya',
+      'Pelengkap: kerupuk, acar, irisan timun'
+    ],
+    caraMembuat: [
+      'Panaskan sedikit minyak, orak-arik telur, sisihkan.',
+      'Tumis bawang merah, bawang putih, dan cabai hingga harum.',
+      'Masukkan ayam suwir dan bakso, masak hingga matang.',
+      'Masukkan nasi putih, aduk rata. Tambahkan kecap manis, saus tiram, garam, dan merica. Aduk hingga bumbu tercampur rata dan nasi sedikit kering.',
+      'Masukkan telur orak-arik, aduk sebentar.',
+      'Sajikan nasi goreng selagi hangat dengan pelengkap.'
+    ]
   },
   {
     id: '2',
-    title: 'Dasar-Dasar Penggunaan Props dan State di React',
-    summary: 'Memahami bagaimana data mengalir antar komponen menggunakan props dan state.',
-    description: 'Props (properties) digunakan untuk meneruskan data dari komponen induk ke anak, sedangkan state digunakan untuk mengelola data internal komponen yang dapat berubah seiring waktu. Keduanya fundamental dalam membangun aplikasi React yang interaktif.',
-    tags: ['React', 'State Management', 'Komponen'],
+    title: 'Sop Buntut Empuk',
+    summary: 'Resep sop buntut sapi yang kaya rasa dengan kuah bening gurih dan daging empuk.',
+    description: 'Sop buntut adalah hidangan berkuah khas Indonesia. Rebus buntut sapi hingga empuk, buang air rebusan pertama. Rebus kembali dengan bumbu halus (bawang merah, bawang putih, jahe, pala) dan rempah (cengkeh, kapulaga). Tambahkan wortel, kentang, dan tomat. Masak hingga semua matang. Sajikan dengan taburan bawang goreng dan irisan daun bawang.',
+    tags: ['Daging', 'Indonesia', 'Makan Siang', 'Makan Malam'],
     liked: true,
+    waktuPersiapan: '30 menit',
+    waktuMasak: '180 menit',
+    porsi: '4 porsi',
+    imageUrl: 'https://aslimasako.com/storage/post/new-title-05122024-090530.jpg',
+    bahan: [
+      '500 gr buntut sapi',
+      '2 liter air',
+      '2 buah wortel, potong',
+      '2 buah kentang, potong',
+      '1 buah tomat, potong',
+      '2 batang daun bawang, iris',
+      'Bawang goreng untuk taburan',
+      'Bumbu Halus:',
+      '5 siung bawang merah',
+      '3 siung bawang putih',
+      '1 ruas jahe',
+      '1/2 sdt pala bubuk',
+      'Rempah:',
+      '2 buah cengkeh',
+      '2 buah kapulaga',
+      '1 batang kayu manis',
+      'Garam, gula, merica secukupnya'
+    ],
+    caraMembuat: [
+      'Rebus buntut sapi hingga mendidih, buang airnya. Cuci bersih buntut.',
+      'Rebus kembali buntut dengan 2 liter air hingga empuk (bisa pakai presto).',
+      'Tumis bumbu halus hingga harum, masukkan rempah. Masukkan tumisan bumbu ke dalam rebusan buntut.',
+      'Tambahkan wortel dan kentang, masak hingga empuk.',
+      'Bumbui dengan garam, gula, dan merica. Masukkan tomat dan sebagian daun bawang.',
+      'Masak sebentar hingga semua matang. Sajikan hangat dengan taburan bawang goreng dan sisa daun bawang.'
+    ]
   },
   {
     id: '3',
-    title: 'Panduan Styling dengan CSS Modules',
-    summary: 'Cara efektif mengelola CSS agar tidak terjadi konflik styling antar komponen.',
-    description: 'CSS Modules adalah cara untuk meng-scope CSS secara lokal ke komponen, mencegah konflik nama kelas global. Setiap kelas CSS yang didefinisikan dalam file .module.css akan di-hash secara unik, memastikan gaya hanya berlaku pada komponen tersebut.',
-    tags: ['CSS', 'Styling', 'Frontend'],
+    title: 'Gado-Gado Siram',
+    summary: 'Hidangan sayuran segar dengan siraman bumbu kacang kental yang lezat.',
+    description: 'Gado-gado adalah salad khas Indonesia yang terdiri dari berbagai sayuran rebus (kangkung, tauge, kol), lontong/ketupat, tahu, tempe, telur rebus, dan disiram dengan bumbu kacang yang kaya rasa. Tambahkan kerupuk dan bawang goreng untuk tekstur renyah. Resep ini cocok untuk vegetarian.',
+    tags: ['Vegetarian', 'Indonesia', 'Makan Siang', 'Sehat'],
     liked: false,
+    waktuPersiapan: '20 menit',
+    waktuMasak: '15 menit',
+    porsi: '3 porsi',
+    imageUrl: 'https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/250/2024/11/21/gado-gado-MAHI-copy-1667004763.jpg',
+    bahan: [
+      '100 gr kangkung, rebus',
+      '100 gr tauge, rebus',
+      '100 gr kol, rebus',
+      '1 buah lontong/ketupat, potong',
+      '2 buah tahu goreng, potong',
+      '2 buah tempe goreng, potong',
+      '2 butir telur rebus, belah dua',
+      'Kerupuk dan bawang goreng untuk pelengkap',
+      'Bumbu Kacang:',
+      '150 gr kacang tanah goreng',
+      '2 siung bawang putih',
+      '2 buah cabai merah (sesuai selera)',
+      '1 ruas kencur',
+      '1 sdm gula merah',
+      '1/2 sdt garam',
+      'Air asam jawa secukupnya',
+      'Air hangat secukupnya'
+    ],
+    caraMembuat: [
+      'Haluskan semua bahan bumbu kacang. Tambahkan air hangat sedikit demi sedikit hingga kekentalan yang diinginkan.',
+      'Tata sayuran, lontong, tahu, tempe, dan telur di piring.',
+      'Siram dengan bumbu kacang.',
+      'Taburi bawang goreng dan sajikan dengan kerupuk.'
+    ]
   },
   {
     id: '4',
-    title: 'Pentingnya Struktur Proyek yang Rapi',
-    summary: 'Manfaat memiliki struktur folder yang terorganisir dalam pengembangan proyek besar.',
-    description: 'Struktur proyek yang rapi memudahkan kolaborasi tim, meningkatkan maintainability, dan mempercepat proses debugging. Penempatan file yang logis seperti memisahkan komponen, halaman, dan data sangat direkomendasikan.',
-    tags: ['Best Practice', 'Proyek', 'Pengembangan'],
+    title: 'Ayam Bakar Madu',
+    summary: 'Ayam bakar dengan lumuran madu yang manis gurih, cocok untuk hidangan keluarga.',
+    description: 'Marinasi ayam dengan bumbu halus (bawang merah, bawang putih, kemiri, ketumbar), kecap manis, dan madu selama minimal 1 jam. Bakar ayam di atas arang atau teflon sambil sesekali dioles sisa bumbu hingga matang dan bumbu meresap sempurna. Sajikan dengan sambal dan lalapan.',
+    tags: ['Ayam', 'Bakar', 'Makan Malam'],
     liked: false,
+    waktuPersiapan: '20 menit',
+    waktuMasak: '45 menit',
+    porsi: '4 porsi',
+    imageUrl: 'https://buckets.sasa.co.id/v1/AUTH_Assets/Assets/p/website/medias/page_medias/Screen_Shot_2023-01-09_at_17_40_36_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1).png',
+    bahan: [
+      '1 ekor ayam, potong 4/8 bagian',
+      '2 sdm madu',
+      '4 sdm kecap manis',
+      '1 sdm air asam jawa',
+      'Bumbu Halus:',
+      '6 siung bawang merah',
+      '4 siung bawang putih',
+      '3 butir kemiri, sangrai',
+      '1 sdt ketumbar bubuk',
+      '1 ruas jahe',
+      '1 ruas kunyit',
+      'Garam dan merica secukupnya'
+    ],
+    caraMembuat: [
+      'Campurkan bumbu halus, madu, kecap manis, dan air asam jawa. Aduk rata.',
+      'Lumuri ayam dengan bumbu marinasi, diamkan minimal 1 jam di kulkas (lebih baik semalaman).',
+      'Bakar ayam di atas bara api/teflon/oven sambil sesekali dioles sisa bumbu hingga matang dan berwarna keemasan.',
+      'Sajikan hangat dengan nasi dan sambal.'
+    ]
   },
   {
     id: '5',
-    title: 'Fitur Interaktif: Filter dan Like',
-    summary: 'Bagaimana mengimplementasikan fitur filter dan tombol like sederhana.',
-    description: 'Fitur filter memungkinkan pengguna menyaring daftar konten berdasarkan kriteria tertentu (misalnya tag). Tombol like adalah contoh interaksi sederhana yang mengubah status UI berdasarkan input pengguna, seringkali diimplementasikan dengan state lokal.',
-    tags: ['Interaktif', 'State Management', 'Fitur'],
+    title: 'Sayur Asem Segar',
+    summary: 'Resep sayur asem dengan kuah asam pedas yang menyegarkan, cocok untuk pendamping nasi.',
+    description: 'Sayur asem adalah masakan sayur berkuah yang populer di Indonesia. Bahan utamanya meliputi labu siam, kacang panjang, jagung, melinjo, dan daun melinjo. Bumbu dasar meliputi bawang merah, bawang putih, cabai, kemiri, asam jawa, dan lengkuas. Masak semua bahan hingga matang dan bumbu meresap. Rasanya asam, manis, dan sedikit pedas.',
+    tags: ['Sayuran', 'Indonesia', 'Sehat', 'Makan Siang'],
     liked: true,
+    waktuPersiapan: '15 menit',
+    waktuMasak: '30 menit',
+    porsi: '4 porsi',
+    imageUrl: 'https://assets.unileversolutions.com/v1/131569115.jpg',
+    bahan: [
+      '1 buah labu siam, potong dadu',
+      '1 ikat kacang panjang, potong',
+      '1 buah jagung manis, potong',
+      '1 genggam daun melinjo',
+      '1 genggam buah melinjo',
+      '2 liter air',
+      'Bumbu Halus:',
+      '5 siung bawang merah',
+      '3 siung bawang putih',
+      '3 buah cabai merah (sesuai selera)',
+      '2 butir kemiri, sangrai',
+      '1 ruas lengkuas, memarkan',
+      '1 sdm asam jawa, larutkan dengan sedikit air',
+      'Garam dan gula merah secukupnya'
+    ],
+    caraMembuat: [
+      'Rebus air hingga mendidih. Masukkan bumbu halus dan lengkuas.',
+      'Masukkan jagung dan melinjo, masak hingga setengah matang.',
+      'Masukkan labu siam dan kacang panjang, masak hingga empuk.',
+      'Tambahkan daun melinjo dan larutan asam jawa. Bumbui dengan garam dan gula merah. Koreksi rasa.',
+      'Masak sebentar hingga semua sayuran matang. Sajikan hangat.'
+    ]
+  },
+  {
+    id: '6',
+    title: 'Martabak Manis Cokelat Keju',
+    summary: 'Resep martabak manis rumahan dengan topping cokelat dan keju yang melimpah.',
+    description: 'Martabak manis adalah kue tebal seperti pancake yang dimasak di wajan khusus. Adonan dibuat dari tepung terigu, telur, gula, dan ragi. Setelah matang, olesi dengan mentega, taburi dengan cokelat meses, keju parut, susu kental manis, dan kacang. Nikmati selagi hangat sebagai camilan.',
+    tags: ['Camilan', 'Manis', 'Indonesia', 'Dessert'],
+    liked: false,
+    waktuPersiapan: '30 menit',
+    waktuMasak: '20 menit',
+    porsi: '8 potong',
+    imageUrl: 'https://www.dapurkobe.co.id/wp-content/uploads/martabak-manis.jpg',
+    bahan: [
+      'Bahan Adonan:',
+      '250 gr tepung terigu serbaguna',
+      '50 gr gula pasir',
+      '1/2 sdt ragi instan',
+      '1/4 sdt baking powder',
+      '1 butir telur',
+      '300 ml air/susu cair',
+      '1/4 sdt vanili bubuk',
+      'Topping:',
+      'Mentega secukupnya',
+      'Cokelat meses secukupnya',
+      'Keju cheddar parut secukupnya',
+      'Susu kental manis secukupnya',
+      'Kacang sangrai cincang (opsional)'
+    ],
+    caraMembuat: [
+      'Campurkan tepung terigu, gula pasir, ragi instan, dan baking powder. Aduk rata.',
+      'Masukkan telur dan air/susu cair sedikit demi sedikit sambil diaduk hingga tidak bergerindil. Tambahkan vanili. Diamkan adonan selama 1 jam hingga mengembang.',
+      'Panaskan teflon martabak dengan api kecil. Tuang adonan, ratakan hingga membentuk pinggiran. Tunggu hingga muncul gelembung.',
+      'Taburi sedikit gula pasir di atas gelembung, tutup teflon hingga matang.',
+      'Angkat martabak, olesi dengan mentega. Beri topping cokelat meses, keju parut, susu kental manis, dan kacang cincang.',
+      'Potong-potong dan sajikan hangat.'
+    ]
   },
 ];
 
-export default contents; // Export array ini agar bisa diimpor di halaman lain
+export default contents;

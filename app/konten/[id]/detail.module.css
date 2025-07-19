@@ -8,6 +8,8 @@
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    /* Improved readability */
 }
 
 .title {
@@ -15,6 +17,45 @@
     color: #202124;
     margin-bottom: 20px;
     line-height: 1.2;
+    text-align: center;
+    /* Center the title */
+}
+
+.recipeImage {
+    width: 100%;
+    max-height: 400px;
+    /* Limit image height */
+    object-fit: cover;
+    /* Ensure image covers the area without distortion */
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.infoContainer {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow items to wrap on smaller screens */
+    justify-content: center;
+    /* Center info items */
+    gap: 25px;
+    /* Spacing between info items */
+    margin-bottom: 25px;
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.infoItem {
+    font-size: 1rem;
+    color: #5f6368;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.infoItem strong {
+    color: #3c4043;
 }
 
 .description {
@@ -22,7 +63,66 @@
     color: #3c4043;
     line-height: 1.7;
     margin-bottom: 30px;
+    text-align: justify;
+    /* Justify text for better readability */
 }
+
+.section {
+    margin-bottom: 30px;
+}
+
+.sectionTitle {
+    font-size: 1.8rem;
+    color: #202124;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #4285f4;
+    /* Underline for sections */
+    padding-bottom: 5px;
+}
+
+.list {
+    list-style: none;
+    /* Remove default list style */
+    padding: 0;
+    margin: 0;
+}
+
+.list li {
+    background-color: #f8f9fa;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    color: #3c4043;
+    font-size: 1rem;
+    display: flex;
+    /* For better alignment of list items */
+    align-items: flex-start;
+}
+
+.list li:last-child {
+    margin-bottom: 0;
+}
+
+.list ol li {
+    /* For ordered lists (Cara Membuat) */
+    counter-increment: step-counter;
+    position: relative;
+    padding-left: 35px;
+    /* Space for the step number */
+}
+
+.list ol li::before {
+    content: counter(step-counter) ".";
+    position: absolute;
+    left: 0;
+    top: 12px;
+    /* Align with text */
+    font-weight: bold;
+    color: #4285f4;
+    /* Blue color for step numbers */
+    font-size: 1.1rem;
+}
+
 
 .tagsContainer {
     margin-top: 20px;
@@ -52,6 +152,8 @@
     border-radius: 8px;
     font-size: 1rem;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    width: auto;
 }
 
 .backLink:hover {
@@ -72,7 +174,7 @@
 .notFoundTitle {
     font-size: 2.5rem;
     color: #ea4335;
-    /* Warna merah untuk error */
+    /* Error red color */
     margin-bottom: 20px;
 }
 
@@ -82,7 +184,7 @@
     margin-bottom: 30px;
 }
 
-/* Responsivitas */
+/* Responsiveness */
 @media (max-width: 768px) {
     .container {
         margin: 20px auto;
@@ -95,6 +197,28 @@
 
     .description {
         font-size: 1rem;
+    }
+
+    .infoContainer {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .sectionTitle {
+        font-size: 1.5rem;
+    }
+
+    .list li {
+        font-size: 0.95rem;
+        padding: 10px 12px;
+    }
+
+    .list ol li {
+        padding-left: 30px;
+    }
+
+    .list ol li::before {
+        top: 10px;
     }
 
     .backLink {

@@ -1,21 +1,19 @@
 // app/layout.js
-import { Inter } from 'next/font/google'; // Menggunakan font Inter untuk konsistensi
+import { Inter } from 'next/font/google';
 import './globals.css';
-import Layout from './components/Layout'; // Import komponen Layout yang baru dibuat
+import Layout from './components/Layout';
 
-const inter = Inter({ subsets: ['latin'] }); // Inisialisasi font Inter
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'SISTECH 2025 - Hands On 2 FE',
-  description: 'Mini Aplikasi Front-End dengan Next.js',
+  title: 'SISTECH 2025 - Aplikasi Resep Masakan', // New title for recipe app
+  description: 'Kumpulan resep masakan lezat dan mudah untuk inspirasi kuliner Anda.', // New description for recipe app
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      {/* Terapkan font Inter ke body */}
       <body className={inter.className}>
-        {/* Bungkus children (konten halaman) dengan komponen Layout */}
         <Layout>
           {children}
         </Layout>
