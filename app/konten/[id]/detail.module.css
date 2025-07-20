@@ -75,54 +75,54 @@
     font-size: 1.8rem;
     color: #202124;
     margin-bottom: 15px;
-    border-bottom: 2px solid #4285f4;
     /* Underline for sections */
     padding-bottom: 5px;
 }
 
 .list {
-    list-style: none;
-    /* Remove default list style */
+    /* Hapus list-style: none; di sini agar nomor bawaan tampil */
     padding: 0;
+    /* Tetap 0 agar tidak ada padding berlebih dari ul/ol */
     margin: 0;
+    /* Tetap 0 agar tidak ada margin berlebih dari ul/ol */
 }
 
+/* Gaya untuk semua elemen daftar (li) di dalam .list */
 .list li {
     background-color: #f8f9fa;
     padding: 12px 15px;
+    /* Padding dasar untuk konten teks */
     margin-bottom: 8px;
     border-radius: 8px;
     color: #3c4043;
     font-size: 1rem;
-    display: flex;
-    /* For better alignment of list items */
-    align-items: flex-start;
+    /* display: flex; dan align-items: flex-start; bisa menyebabkan masalah dengan numbering default */
+    /* Kita akan mengandalkan padding-left untuk jarak */
 }
+
+/* Gaya khusus untuk elemen ordered list (ol) di dalam .list */
+.list ol {
+    list-style-type: decimal;
+    /* Pastikan nomor urut desimal tampil */
+    padding-left: 40px;
+    /* Memberikan indentasi untuk nomor urut */
+    margin-top: 10px;
+    /* Jarak dari judul section */
+}
+
+/* Gaya khusus untuk item daftar (li) di dalam ordered list (ol) */
+/* Ini akan memastikan teks item daftar sejajar setelah nomor */
+.list ol li {
+    /* Tidak perlu position: relative; atau ::before lagi, kita pakai numbering bawaan */
+    /* Cukup atur padding-left agar teks tidak menimpa nomor */
+    padding-left: 10px;
+    /* Jarak antara nomor dan teks item */
+}
+
 
 .list li:last-child {
     margin-bottom: 0;
 }
-
-.list ol li {
-    /* For ordered lists (Cara Membuat) */
-    counter-increment: step-counter;
-    position: relative;
-    padding-left: 35px;
-    /* Space for the step number */
-}
-
-.list ol li::before {
-    content: counter(step-counter) ".";
-    position: absolute;
-    left: 0;
-    top: 12px;
-    /* Align with text */
-    font-weight: bold;
-    color: #4285f4;
-    /* Blue color for step numbers */
-    font-size: 1.1rem;
-}
-
 
 .tagsContainer {
     margin-top: 20px;
@@ -134,8 +134,9 @@
 
 .tag {
     display: inline-block;
-    background-color: #e8f0fe;
-    color: #1a73e8;
+    background-color: #ffd6dd;
+    color: #ff4d6d;
+    /* Mengubah warna tag menjadi merah muda */
     padding: 0.4rem 0.9rem;
     border-radius: 16px;
     font-size: 0.9rem;
@@ -146,7 +147,8 @@
     display: inline-block;
     margin-top: 30px;
     padding: 10px 20px;
-    background-color: #4285f4;
+    background-color: #ff4d6d;
+    /* Mengubah warna tombol kembali */
     color: #ffffff;
     text-decoration: none;
     border-radius: 8px;
@@ -157,7 +159,8 @@
 }
 
 .backLink:hover {
-    background-color: #357ae8;
+    background-color: #ff8fa3;
+    /* Warna hover untuk tombol kembali */
     transform: translateY(-2px);
 }
 

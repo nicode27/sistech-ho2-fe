@@ -4,7 +4,7 @@
     display: inline-block;
     background-color: #e8f0fe;
     /* Warna latar belakang tag */
-    color: #1a73e8;
+    color: #ff4d6d;
     /* Warna teks tag */
     padding: 0.3rem 0.7rem;
     border-radius: 12px;
@@ -22,19 +22,19 @@
 }
 
 .tag:hover {
-    background-color: #d2e3fc;
+    background-color: #ffd4db;
     /* Warna latar belakang saat hover */
 }
 
 /* Gaya untuk tag yang sedang aktif (misalnya saat difilter) */
 .tag.active {
-    background-color: #1a73e8;
+    background-color: #ff899f;
     /* Warna latar belakang biru saat aktif */
     color: #ffffff;
     /* Warna teks putih saat aktif */
 }
 
 .tag.active:hover {
-    background-color: #0d47a1;
+    background-color: #ffb3c1;
     /* Warna latar belakang biru lebih gelap saat aktif dan hover */
 }

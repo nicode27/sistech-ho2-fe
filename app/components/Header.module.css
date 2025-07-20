@@ -21,7 +21,7 @@
     /* Ukuran font logo */
     font-weight: 700;
     /* Tebal */
-    color: #4285f4;
+    color: #ea4335;
     /* Warna biru Google */
     text-decoration: none;
     /* Hapus garis bawah */
@@ -43,7 +43,7 @@
 }
 
 .navItem a {
-    color: #5f6368;
+    color: #000000;
     /* Warna teks navigasi */
     text-decoration: none;
     font-size: 1rem;
@@ -52,7 +52,7 @@
 }
 
 .navItem a:hover {
-    color: #1a73e8;
+    color: #ea4335;
     /* Warna biru saat hover */
 }
 

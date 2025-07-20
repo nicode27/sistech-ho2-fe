@@ -27,39 +27,41 @@ export default function ContentCard({ content, onTagClick, onLikeToggle }) {
         <Image
           src={content.imageUrl}
           alt={content.title}
-          width={400} // Tentukan lebar gambar
-          height={250} // Tentukan tinggi gambar
+          width={200} // Mengurangi lebar gambar untuk tata letak side-by-side
+          height={150} // Menyesuaikan tinggi gambar
           className={contentCardStyles.cardImage}
-          // onError prop tidak diperlukan lagi dengan Next.js Image
         />
       )}
 
-      {/* Link ke halaman detail konten */}
-      <Link href={`/konten/${content.id}`} className={contentCardStyles.titleLink}>
-        <h3 className={contentCardStyles.title}>{content.title}</h3>
-      </Link>
-      <p className={contentCardStyles.summary}>{content.summary}</p>
+      {/* Konten Teks dan Aksi - Dibungkus dalam div baru */}
+      <div className={contentCardStyles.cardContent}>
+        {/* Link ke halaman detail konten */}
+        <Link href={`/konten/${content.id}`} className={contentCardStyles.titleLink}>
+          <h3 className={contentCardStyles.title}>{content.title}</h3>
+        </Link>
+        <p className={contentCardStyles.summary}>{content.summary}</p>
 
-      <div className={contentCardStyles.tagsContainer}>
-        {/* Render setiap tag menggunakan komponen Tag */}
-        {content.tags.map((tag) => (
-          <Tag
-            key={tag} // Key unik untuk setiap tag
-            text={tag}
-            onClick={() => onTagClick(tag)} // Meneruskan tag yang diklik ke parent
-          />
-        ))}
-      </div>
+        <div className={contentCardStyles.tagsContainer}>
+          {/* Render setiap tag menggunakan komponen Tag */}
+          {content.tags.map((tag) => (
+            <Tag
+              key={tag} // Key unik untuk setiap tag
+              text={tag}
+              onClick={() => onTagClick(tag)} // Meneruskan tag yang diklik ke parent
+            />
+          ))}
+        </div>
 
-      <div className={contentCardStyles.actions}>
-        {/* Tombol Like/Bookmark */}
-        <button
-          className={`${contentCardStyles.likeButton} ${isLiked ? contentCardStyles.liked : ''}`}
-          onClick={handleLikeClick}
-        >
-          {/* Menggunakan emoji untuk ikon like/bookmark */}
-          {isLiked ? '❤️ Disukai' : '🤍 Suka'}
-        </button>
+        <div className={contentCardStyles.actions}>
+          {/* Tombol Like/Bookmark */}
+          <button
+            className={`${contentCardStyles.likeButton} ${isLiked ? contentCardStyles.liked : ''}`}
+            onClick={handleLikeClick}
+          >
+            {/* Menggunakan emoji untuk ikon like/bookmark */}
+            {isLiked ? '❤️ Disukai' : '🤍 Suka'}
+          </button>
+        </div>
       </div>
     </div>
   );

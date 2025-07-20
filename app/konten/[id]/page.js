@@ -69,11 +69,11 @@ export default function DetailPage({ params }) {
       {content.bahan && content.bahan.length > 0 && (
         <div className={detailStyles.section}>
           <h2 className={detailStyles.sectionTitle}>Bahan-Bahan:</h2>
-          <ul className={detailStyles.list}>
+          <ol className={detailStyles.list}>
             {content.bahan.map((item, index) => (
               <li key={index}>{item}</li>
             ))}
-          </ul>
+          </ol>
         </div>
       )}
 

@@ -4,89 +4,97 @@
     background: #ffffff;
     border: 1px solid #e0e0e0;
     border-radius: 12px;
-    /* Sudut lebih membulat */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-    /* Bayangan lebih jelas */
     width: 100%;
     max-width: 600px;
-    /* Lebar maksimum kartu */
     margin-bottom: 24px;
-    /* Jarak antar kartu */
-    padding: 24px;
-    /* Padding internal */
+    padding: 20px;
+    /* Sedikit mengurangi padding keseluruhan */
     text-align: left;
     display: flex;
-    flex-direction: column;
+    /* Mengubah menjadi flexbox untuk tata letak side-by-side */
+    gap: 20px;
+    /* Jarak antara gambar dan konten teks */
+    align-items: flex-start;
+    /* Menjajarkan item ke atas */
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    /* Transisi saat hover */
 }
 
 .card:hover {
     transform: translateY(-5px);
-    /* Sedikit naik saat hover */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
-    /* Bayangan lebih kuat saat hover */
 }
 
 .cardImage {
-    width: 100%;
-    height: 200px;
-    /* Fixed height for consistency */
+    width: 200px;
+    /* Lebar tetap untuk gambar */
+    height: 150px;
+    /* Tinggi tetap untuk gambar */
     object-fit: cover;
-    /* Ensure image covers the area without distortion */
     border-radius: 8px;
-    /* Rounded corners for the image */
-    margin-bottom: 15px;
-    /* Space below the image */
+    flex-shrink: 0;
+    /* Mencegah gambar menyusut */
+    transition: transform 0.3s ease-in-out;
+    /* Tambahkan transisi untuk zoom */
+}
+
+.card:hover .cardImage {
+    transform: scale(1.05);
+    /* Zoom in 5% */
+}
+
+.cardContent {
+    flex-grow: 1;
+    /* Memungkinkan konten teks mengambil sisa ruang */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Untuk mendorong tombol like ke bawah */
 }
 
 .titleLink {
     text-decoration: none;
-    /* Hapus garis bawah pada link judul */
     color: inherit;
-    /* Warna teks mengikuti parent */
 }
 
 .title {
-    margin: 0 0 12px 0;
-    font-size: 1.75rem;
-    /* Ukuran judul lebih besar */
-    color: #1a0dab;
-    /* Warna biru link Google */
+    margin: 0 0 8px 0;
+    /* Mengurangi margin bawah judul */
+    font-size: 1.5rem;
+    /* Menyesuaikan ukuran judul agar tidak terlalu besar */
+    color: #000000;
     cursor: pointer;
     transition: color 0.2s ease;
 }
 
 .title:hover {
     text-decoration: underline;
-    /* Garis bawah saat hover */
-    color: #0d47a1;
-    /* Warna biru lebih gelap saat hover */
+    color: #ea4335;
 }
 
 .summary {
-    margin: 0 0 16px 0;
+    margin: 0 0 12px 0;
+    /* Mengurangi margin bawah ringkasan */
     color: #5f6368;
-    /* Warna teks ringkasan */
-    font-size: 1rem;
-    line-height: 1.5;
-    /* Jarak antar baris */
+    font-size: 0.95rem;
+    /* Menyesuaikan ukuran font ringkasan */
+    line-height: 1.4;
 }
 
 .tagsContainer {
     display: flex;
     flex-wrap: wrap;
-    /* Tag akan wrap ke baris baru jika terlalu panjang */
-    margin-top: 10px;
-    margin-bottom: 15px;
+    margin-top: 5px;
+    /* Mengurangi margin atas */
+    margin-bottom: 10px;
+    /* Mengurangi margin bawah */
 }
 
 .actions {
     display: flex;
     justify-content: flex-end;
-    /* Tombol like di kanan bawah */
-    margin-top: auto;
-    /* Mendorong tombol ke bawah jika ada ruang kosong */
+    margin-top: 10px;
+    /* Memberi sedikit jarak dari tag */
 }
 
 .likeButton {
@@ -94,14 +102,12 @@
     color: #5f6368;
     border: 1px solid #dadce0;
     border-radius: 20px;
-    /* Tombol membulat */
     padding: 8px 16px;
     font-size: 0.9rem;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 5px;
-    /* Jarak antara ikon dan teks */
     transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
@@ -112,36 +118,38 @@
 
 .likeButton.liked {
     background-color: #ffebee;
-    /* Warna latar belakang saat disukai */
     color: #ea4335;
-    /* Warna teks merah saat disukai */
     border-color: #fcc2c2;
 }
 
 .likeButton.liked:hover {
     background-color: #fce8e6;
-    /* Warna latar belakang lebih gelap saat disukai dan hover */
     border-color: #f8b0b0;
 }
 
 /* Responsivitas untuk layar lebih kecil */
 @media (max-width: 768px) {
     .card {
+        flex-direction: column;
+        /* Kembali ke tata letak kolom di mobile */
         padding: 18px;
         margin-bottom: 16px;
+        gap: 15px;
     }
 
     .cardImage {
-        height: 150px;
-        /* Adjust height for smaller screens */
+        width: 100%;
+        /* Gambar mengambil lebar penuh di mobile */
+        height: 180px;
+        /* Tinggi gambar disesuaikan */
     }
 
     .title {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
     .summary {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
     }
 
     .likeButton {
