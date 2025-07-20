@@ -2,7 +2,7 @@
 
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     /* Menempatkan logo di kiri, nav di kanan */
     align-items: center;
     padding: 1rem 2rem;
@@ -14,6 +14,18 @@
     /* Sedikit bayangan */
     font-family: 'Inter', sans-serif;
     /* Menggunakan font Inter */
+}
+
+.headerContentWrapper {
+    display: flex;
+    justify-content: space-between;
+    /* Tetap pisahkan logo dan nav di dalam wrapper */
+    align-items: center;
+    width: 100%;
+    /* Ambil lebar penuh dari parent (header) */
+    max-width: 1000px;
+    /* Batasi lebar konten di dalam header untuk pemusatan */
+    /* Sesuaikan max-width ini agar sesuai dengan max-width konten utama di layout.js atau page.module.css */
 }
 
 .logoText {
@@ -73,6 +85,13 @@
 
 /* Media Queries untuk Responsivitas */
 @media (max-width: 768px) {
+    .headerContentWrapper {
+            flex-direction: column;
+            /* Tumpuk logo dan nav secara vertikal di mobile */
+            gap: 10px;
+            padding: 10px 0;
+        }
+        
     .nav {
         display: none;
         /* Sembunyikan navigasi di mobile */

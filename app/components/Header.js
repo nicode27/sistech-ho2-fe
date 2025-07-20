@@ -14,23 +14,28 @@ export default function Header() {
 
   return (
     <header className={headerStyles.header}>
-      <div className={headerStyles.logo}>
-        <Link href="/">
-          {/* Updated logo text for recipe app */}
-          <span className={headerStyles.logoText}>ResepKu</span>
-        </Link>
-      </div>
+      {/* Wrapper untuk konten header agar bisa dipusatkan */}
+      <div className={headerStyles.headerContentWrapper}>
+        {/* Logo atau Nama Aplikasi */}
+        <div className={headerStyles.logo}>
+          <Link href="/">
+            {/* Menggunakan <span> untuk teks logo agar bisa di-styling */}
+            <span className={headerStyles.logoText}>ResepKu</span>
+          </Link>
+        </div>
 
-      <nav className={headerStyles.nav}>
-        <ul className={headerStyles.navList}>
-          <li className={headerStyles.navItem}>
-            <Link href="/">Resep</Link> {/* Updated navigation text */}
-          </li>
-          <li className={headerStyles.navItem}>
-            <Link href="/about">Tentang</Link> {/* Updated navigation text */}
-          </li>
-        </ul>
-      </nav>
+        <nav className={headerStyles.nav}>
+          <ul className={headerStyles.navList}>
+            <li className={headerStyles.navItem}>
+              <Link href="/">Resep</Link>
+            </li>
+            {/* Contoh link lain, bisa ditambahkan sesuai kebutuhan */}
+            <li className={headerStyles.navItem}>
+              <Link href="/about">Tentang</Link> {/* Buat halaman about.js nanti jika perlu */}
+            </li>
+          </ul>
+        </nav>
+      </div>
 
       <button className={headerStyles.menuButton} onClick={toggleMenu}>
         ☰
